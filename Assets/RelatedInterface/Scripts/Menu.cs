@@ -1,27 +1,29 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class Menu : MonoBehaviour
+namespace RelatedInterface.Scripts
 {
-    [SerializeField] private RectTransform rectTransform;
-    [SerializeField] private Toggle hideButton;
-
-    public void Awake()
+    public class Menu : MonoBehaviour
     {
-        hideButton.onValueChanged.AddListener(delegate { SwitchShow();});
-    }
+        [SerializeField] private RectTransform rectTransform;
+        [SerializeField] private Toggle hideButton;
 
-    public void Update()
-    {
+        public void Awake()
+        {
+            hideButton.onValueChanged.AddListener(delegate { SwitchShow();});
+        }
+
+        public void Update()
+        {
         
-    }
+        }
 
     
-    private void SwitchShow()
-    {
-        var vector = rectTransform.anchoredPosition;
-        vector.x = -vector.x;
-        rectTransform.anchoredPosition = vector;
+        private void SwitchShow()
+        {
+            var vector = rectTransform.anchoredPosition;
+            vector.x = -vector.x;
+            rectTransform.anchoredPosition = vector;
+        }
     }
 }
