@@ -10,7 +10,7 @@ namespace RelatedInterface.Scripts
         private RectTransform _rectTransform;
         private Toggle _hideMenuToggle;
         private Toggle _selectAllToggle;
-        private Toggle _hideObjectsToggle;
+        private Toggle _showObjectsToggle;
         private Button _transparency10;
         private Button _transparency30;
         private Button _transparency50;
@@ -37,7 +37,7 @@ namespace RelatedInterface.Scripts
             var toggles = GetComponentsInChildren<Toggle>();
             _hideMenuToggle = toggles[0];
             _selectAllToggle = toggles[1];
-            _hideObjectsToggle = toggles[2];
+            _showObjectsToggle = toggles[2];
             var buttons = GetComponentsInChildren<Button>();
             _transparency10 = buttons[0];
             _transparency30 = buttons[1];
@@ -53,7 +53,7 @@ namespace RelatedInterface.Scripts
         {
             _hideMenuToggle.onValueChanged.AddListener(delegate { SwitchShow();});
             _selectAllToggle.onValueChanged.AddListener(delegate { SelectAll();});
-            _hideObjectsToggle.onValueChanged.AddListener(delegate { HideObjects();});
+            _showObjectsToggle.onValueChanged.AddListener(delegate { HideObjects();});
             _transparency10.onClick.AddListener(delegate { SetAlphaSelected(0.10f);});
             _transparency30.onClick.AddListener(delegate { SetAlphaSelected(0.30f);});
             _transparency50.onClick.AddListener(delegate { SetAlphaSelected(0.50f);});
@@ -81,7 +81,7 @@ namespace RelatedInterface.Scripts
             foreach (var objectMenu in _listObjects)
             {
                 if (objectMenu.Selected)
-                    objectMenu.SetShowed(_hideObjectsToggle.isOn);
+                    objectMenu.SetShowed(_showObjectsToggle.isOn);
             }
         }
 
