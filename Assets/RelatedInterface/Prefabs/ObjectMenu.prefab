@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   someObject: {fileID: 0}
+  prefab: {fileID: 7175707549688105245}
 --- !u!1 &8597594377469563399
 GameObject:
   m_ObjectHideFlags: 0
