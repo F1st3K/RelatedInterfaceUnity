@@ -6,7 +6,7 @@ namespace RelatedInterface.Scripts
 {
     public class Menu : MonoBehaviour
     {
-        public List<ObjectMenu> _listObjects;
+        private List<ObjectMenu> _listObjects;
         private RectTransform _rectTransform;
         private Toggle _hideMenuToggle;
         private Toggle _selectAllToggle;
